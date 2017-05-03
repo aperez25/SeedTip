@@ -37,7 +37,7 @@ $(document).ready(function() {
 		},
 		zoomControl: true,
 		zoomControlOptions: {
-			style: google.maps.zoomControlStyle.LARGE,
+			style: google.maps.ZoomControlStyle.LARGE,
 			position: google.maps.ControlPosition.RIGHT_CENTER
 		},
 		scaleControl: false
