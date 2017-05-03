@@ -59,9 +59,9 @@ $(document).ready(function() {
 		// check to see if the user enterd a zip or not. Use URL based on input
 		if (userZip) {
 			// missing error handling for invalid zip
-			accessURL = "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + userZip;
+			accessURL = "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + userZip;
 		} else {
-			accessURL = "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + userCords.latitude + "&lng=" + userCords.longitude;
+			accessURL = "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + userCords.latitude + "&lng=" + userCords.longitude;
 		}
 
 		// use the zip code and return all market ids in area
@@ -85,7 +85,7 @@ $(document).ready(function() {
 					type: "GET",
 					contentType: "application/json; charset=utf-8",
 					// submit a GET request to the restful service mktDetail
-					url: 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + v,
+					url: 'https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + v,
 					dataType: 'jsonp',
 					success: function(data) {
 
