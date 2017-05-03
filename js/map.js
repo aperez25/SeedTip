@@ -17,7 +17,7 @@ $(document).ready(function() {
 		}
 		// on sucess assins the coords to the userCords var
 		function success(pos) {
-			userCords = pos.corrds;
+			userCords = pos.coords;
 		}
 
 		// get the user's current position
@@ -75,12 +75,12 @@ $(document).ready(function() {
 					//loop through each returned item and push into marketId
 					marketId.push(val.id);
 					// loop through each returned item and push marketName o
-					marketName.push(val.marketName);
+					marketName.push(val.marketname);
 				});
 
 			var counter = 0;
 			// use the id to get query the API again, to return ind market info
-			$.each(marketID, function(k, v) {
+			$.each(marketId, function(k, v) {
 				$.ajax({
 					type: "GET",
 					contentType: "application/json; charset=utf-8",
@@ -128,9 +128,9 @@ $(document).ready(function() {
 						infowindow.open(map, this);
 					});
 					// from the allLatlng array, show the markers in a new viewpoint bound
-					var bounds = new googleLink.maps.LatLngBounds();
+					var bounds = new google.maps.LatLngBounds();
 					// go through each...
-					for(var i =0, LtLgLen = allLatlng.length; i < LtLgLen; i++) {
+					for(var i = 0, LtLgLen = allLatlng.length; i < LtLgLen; i++) {
 						// increase the bound to take this point
 						bounds.extend(allLatlng[i]);
 					}
