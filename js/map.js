@@ -44,7 +44,7 @@ $(document).ready(function() {
 	};
 
 	// adding infowindow option
-	infowindow = new.google.maps.InfoWindow({
+	infowindow = new google.maps.InfoWindow({
 		content: "holding..."
 	});
 
