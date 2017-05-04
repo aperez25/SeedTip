@@ -8,7 +8,7 @@ $(document).ready(function() {
 	infowindow = null,
 	pos,
 	userCords,
-	temMarketHolder = [];
+	tempMarkerHolder = [];
 
 	// Start geolocation
 	if (navigator.geolocation) {
@@ -28,7 +28,7 @@ $(document).ready(function() {
 	// end geolcoation
 
 	//Google map options
-	const mapOptions = {
+	let mapOptions = {
 		zoom: 5,
 		center: new google.maps.LatLng(37.09024, -100.712891),
 		panControl: false,
@@ -98,11 +98,11 @@ $(document).ready(function() {
 
 							// both the lat and long are retuned as one string
 							var split = latLong.split(',');
-							var latitude = split[0];
-							var longitude = split[1];
+							var latitude = parseFloat(split[0]);
+							var longitude = parseFloat(split[1]);
 
 							// set the markets
-							myLatlng = new google.maps.LatLng(latitude, longitude)
+							let myLatlng = new google.maps.LatLng(latitude, longitude)
 							// sets marker parameters
 							allMarkers = new google.maps.Marker({
 								position: myLatlng,
@@ -117,6 +117,9 @@ $(document).ready(function() {
 
 							// put all lat long in array. Need this to create a viewport
 							allLatlng.push(myLatlng);
+							
+							// put the markers in an array
+							tempMarkerHolder.push(allMarkers);
 
 							counter++;
 
